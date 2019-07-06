@@ -79,6 +79,7 @@ const RootPage = () => {
         isOpen={!dogUrl}
         message='Loading...'
         onDidDismiss={() => {}}
+        duration='500'
       />
       <IonModal
         isOpen={showModal}
