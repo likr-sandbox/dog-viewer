@@ -14,7 +14,7 @@ import {
   IonTitle,
   IonToolbar
 } from '@ionic/react'
-import { helpCircle, logoTwitter, refresh } from 'ionicons/icons'
+import { helpCircle, refresh, share } from 'ionicons/icons'
 
 const fetchImage = async () => {
   const request = await window.fetch('https://dog.ceo/api/breeds/image/random')
@@ -57,7 +57,7 @@ const RootPage = () => {
                   })
                 }}
               >
-                <IonIcon slot='icon-only' icon={logoTwitter} />
+                <IonIcon slot='icon-only' icon={share} />
               </IonButton>
             )}
           </IonButtons>
