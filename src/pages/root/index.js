@@ -52,7 +52,11 @@ const RootPage = () => {
               <IonButton
                 icon-only
                 onClick={() => {
-                  window.navigator.share({ url: dogUrl })
+                  window.navigator.share({
+                    title: 'Nice dog image',
+                    text: 'Nice dog image from Dog API',
+                    url: dogUrl
+                  })
                 }}
               >
                 <IonIcon slot='icon-only' icon={logoTwitter} />
@@ -61,7 +65,7 @@ const RootPage = () => {
           </IonButtons>
         </IonToolbar>
       </IonHeader>
-      <IonContent slot='fixed'>
+      <IonContent>
         {dogUrl && <IonImg src={dogUrl} style={{ height: '100%' }} />}
         <IonFab vertical='bottom' horizontal='end'>
           <IonFabButton
@@ -72,46 +76,46 @@ const RootPage = () => {
             <IonIcon icon={refresh} />
           </IonFabButton>
         </IonFab>
-        <IonLoading
-          isOpen={showLoading}
-          message='Loading...'
-          onDidDismiss={() => {}}
-        />
-        <IonModal
-          isOpen={showModal}
-          onDidDismiss={() => {
-            setShowModal(false)
-          }}
-        >
-          <IonPage>
-            <IonHeader>
-              <IonToolbar>
-                <IonTitle>About</IonTitle>
-                <IonButtons slot='end'>
-                  <IonButton
-                    onClick={() => {
-                      setShowModal(false)
-                    }}
-                  >
-                    Close
-                  </IonButton>
-                </IonButtons>
-              </IonToolbar>
-            </IonHeader>
-            <IonContent className='ion-padding'>
-              <p>
-                Dog images from <a href='https://dog.ceo/dog-api/'>Dog API</a>.
-              </p>
-              <p>
-                This app is created with Ionic React.{' '}
-                <a href='https://github.com/likr-sandbox/dog-viewer'>
-                  view source
-                </a>
-              </p>
-            </IonContent>
-          </IonPage>
-        </IonModal>
       </IonContent>
+      <IonLoading
+        isOpen={showLoading}
+        message='Loading...'
+        onDidDismiss={() => {}}
+      />
+      <IonModal
+        isOpen={showModal}
+        onDidDismiss={() => {
+          setShowModal(false)
+        }}
+      >
+        <IonPage>
+          <IonHeader>
+            <IonToolbar>
+              <IonTitle>About</IonTitle>
+              <IonButtons slot='end'>
+                <IonButton
+                  onClick={() => {
+                    setShowModal(false)
+                  }}
+                >
+                  Close
+                </IonButton>
+              </IonButtons>
+            </IonToolbar>
+          </IonHeader>
+          <IonContent className='ion-padding'>
+            <p>
+              Dog images from <a href='https://dog.ceo/dog-api/'>Dog API</a>.
+            </p>
+            <p>
+              This app is created with Ionic React.{' '}
+              <a href='https://github.com/likr-sandbox/dog-viewer'>
+                view source
+              </a>
+            </p>
+          </IonContent>
+        </IonPage>
+      </IonModal>
     </>
   )
 }

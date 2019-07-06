@@ -1,0 +1,7 @@
+{
+  "appId": "jp.vdslab.dog",
+  "appName": "Dog Viewer",
+  "bundledWebRuntime": false,
+  "npmClient": "npm",
+  "webDir": "public"
+}
