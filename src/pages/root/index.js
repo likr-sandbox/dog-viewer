@@ -23,14 +23,12 @@ const fetchImage = async () => {
 }
 
 const RootPage = () => {
-  const [showLoading, setShowLoading] = React.useState(true)
   const [showModal, setShowModal] = React.useState(false)
   const [dogUrl, setDogUrl] = React.useState('')
 
   React.useEffect(() => {
     ;(async () => {
       setDogUrl(await fetchImage())
-      setShowLoading(false)
     })()
   }, [])
 
@@ -78,7 +76,7 @@ const RootPage = () => {
         </IonFab>
       </IonContent>
       <IonLoading
-        isOpen={showLoading}
+        isOpen={!dogUrl}
         message='Loading...'
         onDidDismiss={() => {}}
       />
